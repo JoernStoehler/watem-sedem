@@ -24,8 +24,8 @@ Update this mapping as review subagents are added for this project.
 
 | Changed files pattern | Review subagent(s) to invoke |
 |---|---|
-| `watem_sedem/**/*.py` | (add subagent when available) |
-| `tests/**/*.py` | (add subagent when available) |
+| `watem_sedem_py/src/watem_sedem/**/*.py` | (add subagent when available) |
+| `watem_sedem_py/tests/**/*.py` | (add subagent when available) |
 | `docs/**` | (add subagent when available) |
 
 ## How to Invoke Subagents

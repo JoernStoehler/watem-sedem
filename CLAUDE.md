@@ -9,7 +9,7 @@ Original: watem-sedem/watem-sedem (legacy codebase, multiple branches)
 
 A clean, modern Python reimplementation of WaTEM/SEDEM that:
 - Is self-sufficient and replaces the legacy codebase
-- Has a well-structured, installable Python package (`watem_sedem/`)
+- Has a well-structured, installable Python package (`watem_sedem_py/src/watem_sedem/`)
 - Has a comprehensive test suite (pytest)
 - Has clean, modern documentation
 - Is installable via `uv` / `pip`

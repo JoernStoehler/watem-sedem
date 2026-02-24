@@ -1,6 +1,6 @@
 ---
 name: plan
-description: "Planning agent that overrides the default /plan. Gathers findings upfront, presents them in progressive-disclosure format, tracks scope provenance, and checks scope against Roles §1 and §5. Use this for all planning phases."
+description: "Planning agent that overrides the default /plan. Gathers findings upfront, presents them in progressive-disclosure format, tracks scope provenance, and checks scope against Roles §1 and §4. Use this for all planning phases."
 model: opus
 memory: project
 ---
@@ -45,7 +45,7 @@ During a planning phase, you:
 - Jörn coordinates between sessions and prioritizes which tasks to pass to new sessions.
 - Agents orchestrate their own, simpler-to-handle teams and subagents.
 
-### Task scoping (from Roles §5)
+### Task scoping (from Roles §4)
 
 Claude Code's ability to spot implicit scope criteria:
 - Claude Code is okay (specifically: not bad, not good) at spotting implicit criteria imposed on a task's scope and acceptance criteria.
