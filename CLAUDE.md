@@ -252,9 +252,15 @@ If unexpected files appear in diff, investigate — likely means branch needs re
 ### Package structure
 
 ```
-watem_sedem/         Main package
-tests/               pytest test suite
-docs/                Documentation
+watem_sedem_py/              Python migration (new code goes here)
+  src/watem_sedem/           Python package
+  tests/                     pytest test suite
+
+# Existing Pascal (untouched — will shrink as code is ported and deleted)
+common/                      Pascal model logic (~6350 lines)
+watem_sedem/                 Pascal CLI entry point
+tests/                       Pascal unit tests
+testfiles/                   Integration tests (Pascal binary vs reference data)
 ```
 
 ### Coding conventions
@@ -290,7 +296,7 @@ Before final report:
 
 - Sessions run in a devcontainer with the repo at `/workspaces/watem-sedem`.
   - Worktrees: use `--worktree` flag or `EnterWorktree` tool. Hooks in `.claude/hooks/` override defaults to branch from local `main`. Worktrees land at `.claude/worktrees/<name>/`.
-- Pre-installed: Python 3.x (uv for package management), gh CLI, GDAL system libs
+- Pre-installed: Python 3.x (uv for package management), FPC/Lazarus (Pascal compiler), gh CLI, GDAL system libs
 - Python packages managed via uv
 
 **Runtime limits:**
@@ -301,9 +307,13 @@ Before final report:
 
 ```bash
 # Python
-uv run pytest
+uv run pytest                      # runs tests from watem_sedem_py/tests/ only
 uv run ruff check .
 uv run ruff format .
+
+# Pascal
+make                               # compile binary + unit tests
+testfiles/test.sh                  # run integration tests
 
 # Long-running commands: always wrap with timeout to prevent zombie processes
 timeout 10m uv run pytest

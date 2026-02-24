@@ -8,6 +8,15 @@
 *.o
 *.ppu
 
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+.ruff_cache/
+
 # Python sphinx excludes
 _build/
 

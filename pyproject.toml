@@ -1,0 +1,28 @@
+[project]
+name = "watem-sedem"
+version = "0.0.0"
+description = "WaTEM/SEDEM erosion and sediment delivery model"
+license = "LGPL-3.0-or-later"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "rasterio",
+    "pandas",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+include = ["watem_sedem_py/**/*.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["watem_sedem_py/tests"]

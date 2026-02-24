@@ -37,6 +37,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libspatialindex-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Free Pascal + Lazarus (builds legacy Pascal binary during migration)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    fpc \
+    lazarus \
+    && rm -rf /var/lib/apt/lists/*
+
 # Common CLI tools used by agents (cheap to adjust; comes after base deps)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ripgrep \
